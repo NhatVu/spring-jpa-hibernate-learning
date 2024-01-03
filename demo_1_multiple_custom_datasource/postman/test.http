@@ -1,0 +1,18 @@
+@base_url = http://localhost:8080
+
+#### Datasource One 
+### GetAll
+GET {{base_url}}/one 
+
+### create new message 
+POST {{base_url}}/one/test
+
+
+##### Datasource Two 
+#####
+
+### GetAll
+GET {{base_url}}/two
+
+### create new message 
+POST {{base_url}}/two/test
