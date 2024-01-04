@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Data
 public class MessageEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "message_id_seq")
+    @SequenceGenerator(name = "message_id_seq", sequenceName = "learning_jpa_hibernate.message_id_seq", allocationSize = 1)
     private long id;
     private String text;
 

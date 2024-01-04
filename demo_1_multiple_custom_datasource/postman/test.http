@@ -15,4 +15,4 @@ POST {{base_url}}/one/test
 GET {{base_url}}/two
 
 ### create new message 
-POST {{base_url}}/two/test
+POST {{base_url}}/two/test2
