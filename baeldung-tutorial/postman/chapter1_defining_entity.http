@@ -1,0 +1,22 @@
+@host=http://localhost:8080
+
+### Create Student
+POST {{host}}/student
+Content-Type: application/json
+
+{
+    "name": "name_2"
+}
+
+### Create Student with age. Not save age 
+POST {{host}}/student
+Content-Type: application/json
+
+{
+    "name": "name_3",
+    "age": 10
+}
+
+### GET student 
+GET {{host}}/student
+
