@@ -2,13 +2,19 @@ package org.example.entity;
 
 
 import lombok.Data;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.example.constant.SchemaConstant;
-
+import org.example.events.StudentEntityListener;
 import javax.persistence.*;
 
+
+@EntityListeners(StudentEntityListener.class)
 @Entity
 @Table(name="STUDENT", schema = SchemaConstant.PRIMARY_SCHEMA)
 @Data
+@Slf4j
+@ToString
 public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_id_seq")
@@ -22,4 +28,9 @@ public class StudentEntity {
     private Integer age;
 
     // other fields, getters and setters
+
+    @PrePersist
+    public void prePersist(){
+        log.info("call prePersist for Student Entity: " + this);
+    }
 }

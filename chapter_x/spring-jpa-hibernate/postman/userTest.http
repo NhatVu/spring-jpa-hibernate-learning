@@ -1,0 +1,28 @@
+@base_url_old = http://localhost:8080
+### create user 1
+POST {{base_url_old}}/user
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "userName": "aa"
+}
+
+### get user 1
+GET {{base_url_old}}/user/2
+
+
+#############
+@base_url_new = http://localhost:8081
+### create user 1
+POST {{base_url_new}}/user
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "userName": "aa",
+    "age": 100
+}
+
+### get user 1
+GET {{base_url_new}}/user/2
