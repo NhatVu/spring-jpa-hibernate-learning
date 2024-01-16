@@ -48,6 +48,24 @@ public class Student {
 }
 ```
 
+### Table name 
+By default, JPA defines table name thorough *ImplicitNamingStrategy* contract. It will capitalize the first character of the class. We can change this behaviour by implementing a *PhysicalNamingStrategy* interface.
+
+I prefer to use annotation approach, @jakarta.persistence.Table. Check previous example.
+
+###  Overwriting the Table Name in JPQL Queries 
+```java
+@Entity
+public class Article {
+    // ...
+}
+```
+
+By default, in JPQL queries, we use the entity class name: `select * from Article`
+
+If we change the Entity table name to `@Entity(name = "MyArticle")`, JPQL becomes `select * from MyArticle`.
+
 References:
 1. https://www.baeldung.com/jpa-entities 
 2. https://www.baeldung.com/hibernate-identifiers
+3. https://www.baeldung.com/jpa-entity-table-names
