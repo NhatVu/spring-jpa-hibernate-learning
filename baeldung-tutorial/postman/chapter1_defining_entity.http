@@ -20,3 +20,10 @@ Content-Type: application/json
 ### GET student 
 GET {{host}}/student
 
+#########
+######### Chap3: default value for entity 
+POST {{host}}/student
+Content-Type: application/json
+
+{
+}
