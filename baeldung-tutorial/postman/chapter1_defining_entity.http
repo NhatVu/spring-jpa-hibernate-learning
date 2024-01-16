@@ -5,7 +5,7 @@ POST {{host}}/student
 Content-Type: application/json
 
 {
-    "name": "name_2"
+    "name": "name_6"
 }
 
 ### Create Student with age. Not save age 

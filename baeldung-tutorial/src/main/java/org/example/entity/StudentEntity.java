@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.constant.SchemaConstant;
 import org.example.events.StudentEntityListener;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 
 @EntityListeners(StudentEntityListener.class)
@@ -23,7 +24,8 @@ public class StudentEntity {
     @SequenceGenerator(name = "student_id_seq", sequenceName = SchemaConstant.PRIMARY_SCHEMA + ".student_id_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name="STUDENT_NAME", length=50)
+    @Column(name="STUDENT_NAME", length=5)
+    @Size(max = 5)
     private String name;
 
     @Transient
