@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.example.constant.SchemaConstant;
-import org.example.events.StudentEntityListener;
+import org.example.entity.events.StudentEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 

@@ -1,0 +1,22 @@
+@host=http://localhost:8080
+
+### Create Student
+POST {{host}}/company
+Content-Type: application/json
+
+{
+    "name": "name_2",
+    "address": "address_2",
+    "phone": "+9024524624",
+    "contactPerson": {
+        "firstName": "firstname_2",
+        "lastName": "lastname_2",
+        "phone": "+901_phone2"
+    }
+}
+
+
+### GET companies
+GET {{host}}/company
+
+

@@ -1,4 +1,4 @@
-package org.example.events;
+package org.example.entity.events;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.entity.StudentEntity;
