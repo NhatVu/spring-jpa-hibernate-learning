@@ -9,6 +9,7 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -50,5 +51,10 @@ public class DatasourceTwoConfig {
     public PlatformTransactionManager twoTransactionManager(
             @Qualifier("twoEntityManagerFactory") LocalContainerEntityManagerFactoryBean oneEntityManagerFactory) {
         return new JpaTransactionManager(Objects.requireNonNull(oneEntityManagerFactory.getObject()));
+    }
+
+    @Bean(name = "twoDataSourceJdbcTemplate")
+    public NamedParameterJdbcTemplate twoDataSourceJdbcTemplate(@Qualifier("twoDataSource") DataSource twoDataSource) {
+        return new NamedParameterJdbcTemplate(twoDataSource);
     }
 }
